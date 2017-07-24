@@ -67,6 +67,7 @@ public class MainActivity extends AppCompatActivity {
                 while ((line = rd.readLine()) != null) {
                     result.append(line);
                 }
+                //ww
                 rd.close();
                 resStr = result.toString();
 
