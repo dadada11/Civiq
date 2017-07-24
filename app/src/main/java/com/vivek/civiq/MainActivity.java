@@ -18,12 +18,13 @@ import java.util.ArrayList;
 import org.json.simple.*;
 
 
-import android.util.Base64;
+
 import android.util.Log;
 import org.json.simple.*;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
+import org.apache.commons.codec.binary.Base64;
 import javax.xml.bind.DatatypeConverter;
 
 
@@ -124,17 +125,15 @@ public class MainActivity extends AppCompatActivity {
 
         try {
             // encode data on your side using BASE64
-            byte[]   bytesEncoded = Base64.encodeBase64(str .getBytes());
-            System.out.println("ecncoded value is " + new String(bytesEncoded ));
+            byte[]   bytesEncoded = Base64.encodeBase64("hello".getBytes());
+            Log.d("printedoutdude", "ecncoded value is " + new String(bytesEncoded ));
 
 // Decode data on other side, by processing encoded data
             byte[] valueDecoded= Base64.decodeBase64(bytesEncoded );
-            System.out.println("Decoded value is " + new String(valueDecoded));
-            Log.d("sdbfsl", new String(decoded, "UTF-8") + "\n");
+            Log.d("decoded value", "Decoded value is " + new String(valueDecoded));
+            //Log.d("sdbfsl", new String(decoded, "UTF-8") + "\n");
         }
-        catch (java.io.UnsupportedEncodingException e) {
-            Log.d("sdbfsl", "error lmaoooo");
-        }
+
         catch (java.lang.NoSuchMethodError i) {
             Log.d("sdbfsl", "error lmao");
         }
